@@ -1,12 +1,12 @@
 version: '3.8'
 
 services:
-  extensions-service-database:
+  email-api-database:
     image: mysql:8.0
-    container_name: extensions-service-database
+    container_name: email-api-database
     environment:
       MYSQL_ROOT_PASSWORD: root1234
-      MYSQL_DATABASE: runtime_services
+      MYSQL_DATABASE: challenge
       MYSQL_PASSWORD: root1234
     ports:
       - "3306:3306"
