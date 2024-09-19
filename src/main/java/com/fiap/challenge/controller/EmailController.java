@@ -23,9 +23,13 @@ public class EmailController {
     }
 
     @PostMapping
-    public ResponseEntity<EmailEntity> addEmail(@RequestBody EmailEntity email) {
-        EmailEntity savedEmail = emailService.addEmail(email);
-        return new ResponseEntity<>(savedEmail, HttpStatus.CREATED);
+    public ResponseEntity<?> addEmail(@RequestBody EmailEntity email) {
+        try {
+            EmailEntity savedEmail = emailService.addEmail(email);
+            return new ResponseEntity<>(savedEmail, HttpStatus.CREATED);
+        } catch (Exception e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.TOO_MANY_REQUESTS);
+        }
     }
 
     @PutMapping("/{id}")

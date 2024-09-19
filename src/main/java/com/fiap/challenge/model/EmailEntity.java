@@ -26,4 +26,7 @@ public class EmailEntity {
     @CollectionTable(name = "email_tags", joinColumns = @JoinColumn(name = "email_id"))
     @Column(name = "tag")
     private List<String> tags;
+
+    @Column(nullable = false)
+    private Long userId = 0L;
 }
