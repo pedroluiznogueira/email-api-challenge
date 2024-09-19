@@ -4,7 +4,7 @@
 
 - Install IntelliJ
 - Install Docker
-- Instal java
+- Install java
 
 ## How to run the project locally
 
